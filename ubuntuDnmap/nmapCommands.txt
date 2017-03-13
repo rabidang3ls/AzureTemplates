@@ -1,7 +1,7 @@
 # Test subnets that belong to Omniture
-nmap -sT -p 0-65535 -Pn -oA omnitureAllTcpPortsConnectScanNoService1 64.0.192.0/24
-nmap -sT -p 0-65535 -Pn -oA omnitureAllTcpPortsConnectScanNoService2 216.143.122.0/24
-nmap -sT -p 0-65535 -Pn -oA omnitureAllTcpPortsConnectScanNoService3 67.133.240.0/24
+nmap -sT -Pn -oA omnitureAllTcpPortsConnectScanNoService1 64.0.192.0/24
+nmap -sT -Pn -oA omnitureAllTcpPortsConnectScanNoService2 216.143.122.0/24
+nmap -sT -Pn -oA omnitureAllTcpPortsConnectScanNoService3 67.133.240.0/24
 
 #nmap -sT -p 0-65535 -Pn -oA omnitureAllTcpPortsConnectScanNoService1 64.0.192.0/22
 #nmap -sT -p 0-65535 -Pn -oA omnitureAllTcpPortsConnectScanNoService2 216.143.122.0/23
