@@ -12,5 +12,5 @@ RecGroup=dnmaprg-`date +%s`
 azure group create -n $RecGroup -l "West US"
 azure group deployment create -f azureDeploy.json -e azureDeploy.parameters.json -g $RecGroup -n $RecGroup
 ```
-4. Get the public IP addresses of the newly created VMs with the following command:
+Get the public IP addresses of the newly created VMs with the following command:
 `azure vm list-ip-address | grep data | grep dnmapVM | awk '{print $4}'`
