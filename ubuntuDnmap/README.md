@@ -13,4 +13,4 @@ azure group create -n $RecGroup -l "West US"
 azure group deployment create -f azureDeploy.json -e azureDeploy.parameters.json -g $RecGroup -n $RecGroup
 ```
 Get the public IP addresses of the newly created VMs with the following command (depending on the number of VMs in your azure subscription, this command can take a while. I've got 35 VMs and it takes about 32 seconds to complete):
-azure vm list-ip-address | grep data | grep dnmapVM | awk '{print $4}'
+`azure vm list-ip-address | grep data | grep dnmapVM | awk '{print $4}'`
