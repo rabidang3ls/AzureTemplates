@@ -1,0 +1,8 @@
+# Test subnets that belong to Omniture
+nmap -sT -p 0-65535 -Pn -oA omnitureAllTcpPortsConnectScanNoService1 64.0.192.0/22
+nmap -sT -p 0-65535 -Pn -oA omnitureAllTcpPortsConnectScanNoService2 216.143.122.0/23
+nmap -sT -p 0-65535 -Pn -oA omnitureAllTcpPortsConnectScanNoService3 67.133.240.0/24
+
+#
+# Could use input list. Would be handy if you didn't need different flags for different subnets. Need to test. Not sure how well dnmap plays with input lists.
+# nmap -sS -p 0-65535 -Pn -oA allTcpPortsSynScanNoService -iL ipRanges.txt
