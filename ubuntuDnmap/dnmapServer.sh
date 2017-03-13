@@ -7,9 +7,9 @@ mv * /home/dnmap/
 cd /home/dnmap/
 wget https://raw.githubusercontent.com/rabidang3ls/AzureTemplates/master/ubuntuDnmap/ipRanges.txt https://raw.githubusercontent.com/rabidang3ls/AzureTemplates/master/ubuntuDnmap/nmapCommands.txt
 if [ $(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d:) == 10.0.0.4 ]; then
-  /home/dnmap/dnmap_server.py -f nmapCommands.txt -v 3
-#  screen -S dnmap -d -m /home/dnmap/dnmap_server.py -f nmapCommands.txt -v 3
+#  /home/dnmap/dnmap_server.py -f nmapCommands.txt -v 3
+  screen -S dnmap -d -m /home/dnmap/dnmap_server.py -f nmapCommands.txt -v 3
 else
-  /home/dnmap/dnmap_client.py -s 10.0.0.4 -d -a $(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d:)
-#  screen -S dnmap -d -m /home/dnmap/dnmap_client.py -s 10.0.0.4 -d -a $(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d:)
+#  /home/dnmap/dnmap_client.py -s 10.0.0.4 -d -a $(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d:)
+  screen -S dnmap -d -m /home/dnmap/dnmap_client.py -s 10.0.0.4 -d -a $(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d:)
 fi
