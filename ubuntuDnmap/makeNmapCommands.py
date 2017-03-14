@@ -1,4 +1,4 @@
-#!/usr/env/python
+#!/usr/env/python3
 
 jobsFast = []
 # jobsIntermediate = []
@@ -7,6 +7,7 @@ jobsThorough = []
 def main():
 	with open('ips.txt', 'r') as f:
 		iplist = f.read().splitlines()
+	
 	for item in iplist:
 		item2 = ''
 		if '/' in item:
@@ -17,6 +18,7 @@ def main():
 		else:
 			jobsFast.append('nmap -Pn --top-ports 100 -oA {0}.fast {1}'.format(item2,item)) #add -Pn?
 			jobsThorough.append('nmap -p 0-65535 -oA {0}.thorough {1}'.format(item2,item))
+
 	with open('nmapCommands.txt', 'w') as f:
 		for item in jobsFast:
 			f.write(item + '\n')
