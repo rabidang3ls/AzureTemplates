@@ -17,6 +17,10 @@ def main():
 		default='-Pn --top-ports 100',
 		dest='fast',
 		help='The arguments to be used in the initial fast scan. Use quotes to contain all arguments.')
+	# parser.add_argument('-ia', '--intermediate-args',
+	# 	default='',
+	# 	dest='intermediate',
+	# 	help='The arguments to be used in the intermediate scan.')
 	parser.add_argument('-ta', '--thorough-args',
 		default='-p 0-65535',
 		dest='thorough',
