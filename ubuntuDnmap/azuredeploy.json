@@ -4,6 +4,7 @@
   "parameters": {
     "newStorageAccountName": {
       "type": "string",
+      "defaultValue": "[concat('dnmapsa',uniqueString(resourceGroup().id))]",
       "metadata": {
         "description": "Unique DNS Name for the Storage Account where the Virtual Machine's disks will be placed."
       }
@@ -28,6 +29,7 @@
     },
     "dnsNameForPublicIP": {
       "type": "string",
+      "defaultValue": "[concat('dnmappubip',uniqueString(resourceGroup().id))]",
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
