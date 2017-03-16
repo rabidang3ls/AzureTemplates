@@ -3,9 +3,13 @@
 from os import system
 from argparse import ArgumentParser
 
+jobsFast = []
+# jobsIntermediate = []
+jobsThorough = []
+
 def main():
 
-	parser = ArgumentParser(formatter_class=RawTextHelpFormatter)
+	parser = ArgumentParser()
 	parser.add_argument('-f', '--file',
 		default='ips.txt',
 		dest='file',
@@ -36,8 +40,9 @@ def main():
 	try:
 		import netifaces
 	except:
-		print('you dun messed up a-aron. You should probably install netifaces')
-		exit(-1)
+		print('Please install python-netifaces')
+		exit()
+
 	netifaces.ifaddresses('eth0')
 	ip = netifaces.ifaddresses('eth0')[2][0]['addr']
 	if ip == '10.0.0.4':
