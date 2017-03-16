@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import netifaces
 from os import system
 from argparse import ArgumentParser
 
@@ -34,6 +33,10 @@ def main():
 	system('echo \"sudo -s\" > .bash_login && chown dnmap:dnmap .bash_login && chmod 644 .bash_login')
 	system('wget https://raw.githubusercontent.com/rabidang3ls/AzureTemplates/master/ubuntuDnmap/ips.txt https://raw.githubusercontent.com/rabidang3ls/AzureTemplates/master/ubuntuDnmap/makeNmapCommands.py')
 
+	try:
+		import netifaces
+	except:
+		
 	netifaces.ifaddresses('eth0')
 	ip = netifaces.ifaddresses('eth0')[2][0]['addr']
 	if ip == '10.0.0.4':
