@@ -31,9 +31,9 @@ def main():
 	system('apt -y update && apt -y install python3 python-twisted-bin python-twisted-core nmap python-netifaces')
 	system('wget https://github.com/rabidang3ls/AzureTemplates/raw/master/ubuntuDnmap/dnmap_v0.6.tgz')
 	system('tar -zxf dnmap_v0.6.tgz')
-	chdir('cd dnmap_v0.6')
+	chdir('dnmap_v0.6')
 	system('mv * /home/dnmap/')
-	chdir('cd /home/dnmap/')
+	chdir('/home/dnmap/')
 	system('echo \"sudo -s\" > .bash_login && chown dnmap:dnmap .bash_login && chmod 644 .bash_login')
 	system('wget https://raw.githubusercontent.com/rabidang3ls/AzureTemplates/master/ubuntuDnmap/ips.txt https://raw.githubusercontent.com/rabidang3ls/AzureTemplates/master/ubuntuDnmap/makeNmapCommands.py')
 
