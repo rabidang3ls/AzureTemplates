@@ -40,7 +40,7 @@ def main():
 	try:
 		import netifaces
 	except:
-		print('Please install python-netifaces')
+		print('Please install python-netifaces manually: apt install python-netifaces')
 		exit()
 
 	netifaces.ifaddresses('eth0')
@@ -59,10 +59,8 @@ def makeNmapCommands(args):
 
 	for item in iplist:
 		item2 = ''
-
 		if '/' in item:
 			item2 = item.replace('/', 'slash')
-
 		if not item2:
 			jobsFast.append('nmap ' + args.fast + ' -oA {0}.fast {0}'.format(item))
 			# jobsIntermediate.append('nmap command')
@@ -73,14 +71,10 @@ def makeNmapCommands(args):
 			jobsThorough.append('nmap ' + args.thorough + ' -oA {0}.thorough {1}'.format(item2,item))
 
 	with open('nmapCommands.txt', 'w') as f:
-
 		for item in jobsFast:
 			f.write(item + '\n')
-
 		for item in jobsThorough:
 			f.write(item + '\n')
 
-
 if __name__ == '__main__':
 	main()
-
