@@ -18,7 +18,9 @@ azure group deployment create -f azureDeploy.json -e azureDeploy.parameters.json
 ```
 
 Get the public IP addresses of the newly created VMs with the following command (depending on the number of VMs in your azure subscription, this command can take a while. I've got 35 VMs and it takes about 32 seconds to complete):
+
 `azure vm list-ip-address | grep data | grep dnmapVM | awk '{print $4}'`
 
-It is possible to add commands to the server after it is started. Ensure you append to the nmapCommands.txt file and DO NOT overwrite. Do something like the following:
-`echo "nmap 8.8.8.8 -sT -oA 8.8.8.8" >> nmapCommands.txt`
+It is possible to add commands to the server after it is started. SSH into the server with private ip of 10.0.0.4 and ensure you append to the ips.txt file and DO NOT overwrite. Do something like the following:
+
+`echo "nmap 8.8.8.8 -sT -oA 8.8.8.8" >> ips.txt`
