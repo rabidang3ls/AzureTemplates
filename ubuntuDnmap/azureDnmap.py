@@ -36,7 +36,8 @@ def main():
 	try:
 		import netifaces
 	except:
-		
+		print('you dun messed up a-aron. You should probably install netifaces')
+		exit(-1)
 	netifaces.ifaddresses('eth0')
 	ip = netifaces.ifaddresses('eth0')[2][0]['addr']
 	if ip == '10.0.0.4':
