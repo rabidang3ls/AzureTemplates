@@ -1,8 +1,9 @@
 ##Prerequisites to using DNMAP with Azure Resource Manager Template:
-1. Must have access to an Azure account (tested on Adobe's DMa/Sandbox shared R&D but should work with any account)
+1. Must have access to an Azure account (tested on Adobe's DMa/Sandbox shared R&D but should work with any account).
 2. Must be a collaborator of https://github.com/rabidang3ls/AzureTemplates
-  1.OR clone the repo and update the links to your local files
+  1. OR clone the repo and update the links to your local files.
 3. Must have private key to access VMs.
+  1. OR change public key in the parameters file.
 
 ##Running DNMAP:
 1. Put the IPs/hostnames you want to be scanned in `ips.txt`
