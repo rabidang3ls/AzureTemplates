@@ -35,7 +35,7 @@ def main():
 	system('mv * /home/dnmap/')
 	chdir('/home/dnmap/')
 	system('echo \"sudo -s\" > .bash_login && chown dnmap:dnmap .bash_login && chmod 644 .bash_login')
-	system('wget https://raw.githubusercontent.com/rabidang3ls/AzureTemplates/master/ubuntuDnmap/ips.txt https://raw.githubusercontent.com/rabidang3ls/AzureTemplates/master/ubuntuDnmap/makeNmapCommands.py')
+	system('wget https://raw.githubusercontent.com/rabidang3ls/AzureTemplates/master/ubuntuDnmap/ips.txt')
 
 	try:
 		import netifaces
