@@ -15,7 +15,7 @@ def main():
 		dest='file',
 		help='The file containing IP addresses in one of three forms: \n    1. CIDR notation - 10.1.1.0/24\n    2. Range of IPs - 10.1.1.24-65\n    3. Individual IP - 10.1.1.4\n\n')
 	parser.add_argument('-fa', '--fast-args',
-		default='-Pn --top-ports 100',
+		default='-Pn -T4 --top-ports 100',
 		dest='fast',
 		help='The arguments to be used in the initial fast scan. Use quotes to contain all arguments.')
 	# parser.add_argument('-ia', '--intermediate-args',
@@ -23,7 +23,7 @@ def main():
 	# 	dest='intermediate',
 	# 	help='The arguments to be used in the intermediate scan.')
 	parser.add_argument('-ta', '--thorough-args',
-		default='-p 0-65535',
+		default='-T4 -p 0-65535',
 		dest='thorough',
 		help='The arguments to be used in the final thorough scan. Use quotes to contain all arguments.')
 	args = parser.parse_args()
